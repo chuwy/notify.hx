@@ -29,7 +29,7 @@ Once installed, you can add the following to `init.scm` in your Helix config dir
 This plugin is intended to be used by other plugins from [Steel](https://github.com/mattwparas/steel):
 
 ```scheme
-(require notify)
+(require "notify/notify.scm")
 
 (notify "This is a minimal popup with info severity")
 
@@ -59,5 +59,5 @@ notify.hx solves all these problem.
 
 ## Acknowledgments
 
-* @mattwparas for his work on the plugin system for Helix and his help on Steel Discord
-* @rcarriga for [nvim-notify](https://github.com/rcarriga/nvim-notify) where notify.hx draws an inspiration from
+* [@mattwparas](https://github.com/mattwparas/) for his work on the plugin system for Helix and his help on Steel Discord
+* [@rcarriga](https://github.com/rcarriga/) for [nvim-notify](https://github.com/rcarriga/nvim-notify) where notify.hx draws an inspiration from
