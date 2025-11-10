@@ -295,7 +295,7 @@
 
   (define popup-square (get-popup-geometry notification))
   (define final-width (min screen-width (car popup-square)))
-  (define final-height (min screen-height (cadr popup-square)))
+  (define final-height (min (- screen-height 3) (cadr popup-square)))  ; 3 is tabs+statusline+cmdline
 
   ; Position at top right corner
   (define x-pos (- screen-width final-width))
