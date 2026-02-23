@@ -260,12 +260,12 @@
 
     (define border-style (get-style notification))
 
-    (define block (make-block (theme->bg *helix.cx*) border-style "all" "rounded"))
+    (define block (make-block (theme-scope *helix.cx* "ui.background") border-style "all" "rounded"))
     (buffer/clear frame outer-area)
     (block/render frame outer-area block)
 
     (define header-area (area inner-area-x (+ inner-area-y 1) inner-width 1))
-    (define header-line (make-block (theme->bg *helix.cx*) border-style "top" "plain"))
+    (define header-line (make-block (theme-scope *helix.cx* "ui.background") border-style "top" "plain"))
     (block/render frame header-area header-line)
 
     (render-lines frame (+ inner-area-x 1) inner-area-y notification (bg-style notification))
