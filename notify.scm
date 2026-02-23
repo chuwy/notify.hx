@@ -74,7 +74,7 @@
 (define (bg-style notification)
   (if (unbox (Notification-blink notification))
       (begin (set-box! (Notification-blink notification) #f) (theme-scope *helix.cx* "ui.selection"))
-      (theme-scope *helix.cx* "normal")))
+      (theme-scope *helix.cx* "ui.text")))
 
 (define (find pred lst)
   (cond ((null? lst) #f)
@@ -274,7 +274,7 @@
 
 ;; A helper over `frame-set-string!` to render a list of lines, one list member per line
 (define (render-lines frame start-x start-y notification bg-style)
-  (define normal-style (theme-scope *helix.cx* "normal"))
+  (define normal-style (theme-scope *helix.cx* "ui.text"))
 
   (unless (minimal-render? notification)
           (frame-set-string! frame start-x start-y (get-header notification) (get-style notification))
