@@ -218,7 +218,8 @@
     (lambda (notification)
             (let* ([area (get-area notification)]
                    [prev-click (get-click notification)]
-                   [within-area? (mouse-event-within-area? event area)])
+                   ; Right after initialisation area ends up being #f, so need to check
+                   [within-area? (and area (mouse-event-within-area? event area))])
                   (when (and within-area? (equal? click 'down))
                         (unless (equal? prev-click 'clicked) (set-click! notification 'down)))
                   (when (and within-area? (equal? click 'up) (equal? prev-click 'down))
